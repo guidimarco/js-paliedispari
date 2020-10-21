@@ -1,5 +1,5 @@
 
-// <1-fold START --- PALINDROME VERSION 1.0
+// <1-fold START --- PALINDROME VERSION 1.0 --- create a reverse word and check if are the same!
 console.log("Palindrome Version 1.0:");
 
 // VAR ASSIGNMENT
@@ -24,36 +24,27 @@ if (areSameString(userWord, userWordReverse)) {
 }
 
 
-
-
-
 // </1-fold END --- PALINDROME VERSION 1.0
 
 // <1-fold START --- ALL FUNCTION
-// FOR REVERSE A STRING
+
+// GENERATE A REVERSE STRING
 function stringRevesator(string) {
-    // // check
+    // // *** check ***
     // console.log("*** Funzione stringReversator output ***");
     // console.log(string + " di lunghezza " + string.length);
 
-    // STRING REVERSE GENERATOR
-    var stringReverseArray = [];
+    // var assignment
     var stringReverse = "";
 
-    // from the last letter to the first --> array
+    // STRING REVERSE GENERATOR
+    // take letters from last to first and concatenate in the reverse-string
     for (var i = string.length - 1; i >= 0; i--) {
         // push in reverse index
-        stringReverseArray.push(string[i]);
-
+        stringReverse += string[i]
     }
-    // // check
-    // console.log(stringReverseArray);
 
-    // from array to string
-    for (var i = 0; i < stringReverseArray.length; i++) {
-        stringReverse += stringReverseArray[i];
-    }
-    // // check
+    // // *** check ***
     // console.log(stringReverse);
     // console.log("*** Funzione stringReversator output END ***");
 
@@ -61,44 +52,24 @@ function stringRevesator(string) {
     return stringReverse;
 }
 
-// FOR CONFRONT 2 STRING --> "true" if same string
+// FOR CONFRONT 2 STRING --> "true" if same string, "false" otherwise (default)
 function areSameString(string1, string2) {
-    // check
-    console.log("Sto comparando " + string1 + " con " + string2);
+    // // check
+    // console.log("*** Output function areSameString ***");
+    // console.log("Sto comparando " + string1 + " con " + string2);
 
-    // VAR ASSIGNMENT
-    var stringCompareControl = true;
+    // var assignment
+    // sentinel var --> default value: false
+    var stringCompareControl = false;
 
     // first check: string-length-compare
-    if (string1.length == string2.length) {
-        // same-length-string
-
-        // // check
-        // console.log("hanno stessa lunghezza");
-
-        // cycle for compare letter with same index
-        for (var i = 0; i < string1.length; i++) {
-            // IF one letter is different
-            if (string1[i] != string2[i]) {
-                stringCompareControl = false;
-
-                // // check
-                // console.log(i + "esima lettera diversa");
-            } else {
-                // // check
-                // console.log(i + "esima lettera uguale");
-            }
-        }
-    } else {
-        // not-same-length-string
-        stringCompareControl = false;
-
-        // // check
-        // console.log("Non hanno stessa lunghezza");
+    if (string1 == string2) {
+        stringCompareControl = true;
     }
 
-    // check
-    console.log(stringCompareControl);
+    // // check
+    // console.log("Sono la stessa parola? " + stringCompareControl);
+    // console.log("*** fine areSameString ***");
     return stringCompareControl;
 }
 
